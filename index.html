@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Base de Datos 2 - UPLA</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Fondo animado -->
+  <div class="lava-background">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+    <div class="grain"></div>
+  </div>
+
+  <div class="ui-layer">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="logo-container">
+        <div class="logo-hex">⚛</div>
+        <div class="logo-text">UPLA</div>
+      </div>
+
+      <div class="title-section">
+        <h1>Base de Datos 2</h1>
+        <p>Universidad Peruana Los Andes</p>
+      </div>
+
+      <div class="header-spacer"></div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main-content">
+      <div class="card">
+
+        <!-- ============ VISTA BIENVENIDA ============ -->
+        <section class="view view-active" id="view-welcome">
+          <div class="welcome-left">
+            <h2><span class="dot"></span>Bienvenido</h2>
+            <div class="underline"></div>
+
+            <nav class="nav-menu">
+              <a href="#" class="nav-item active" data-view="welcome">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Inicio</span>
+              </a>
+              <a href="#" class="nav-item" data-view="tareas">
+                <span class="nav-icon">📄</span>
+                <span class="nav-label">Tareas</span>
+              </a>
+              <a href="#" class="nav-item" data-view="login">
+                <span class="nav-icon">➡</span>
+                <span class="nav-label">Login</span>
+              </a>
+            </nav>
+          </div>
+
+          <div class="welcome-right">
+            <p>Bienvenido al portal de <span>Base de Datos 2</span>.</p>
+            <div class="line-small"></div>
+            <h3 class="author-name">Alarcon Gutierrez Angelo</h3>
+            <p class="author-role">Estudiante</p>
+          </div>
+        </section>
+
+        <!-- ============ VISTA TAREAS (UNIDADES) ============ -->
+        <section class="view" id="view-tareas">
+          <button class="btn-back" id="btn-back" title="Volver">
+            <span class="back-arrow">←</span>
+          </button>
+
+          <h2 class="tareas-title">Unidades</h2>
+          <div class="tareas-underline"></div>
+
+          <div class="units-grid">
+            <div class="unit-card" data-unit="1">
+              <div class="unit-icon">📁</div>
+              <h4>Unidad I: Arquitecturas de Bases de Datos y Configuración del Entorno Corporativo</h4>
+            </div>
+            <div class="unit-card" data-unit="2">
+              <div class="unit-icon">📁</div>
+              <h4>Unidad II: Administración de Instancias, Estructuras de Almacenamiento y Gestión de Datos Masivos</h4>
+            </div>
+            <div class="unit-card" data-unit="3">
+              <div class="unit-icon">📁</div>
+              <h4>Unidad III: Seguridad Corporativa, Conectividad de Red y Alta Disponibilidad de Datos</h4>
+            </div>
+            <div class="unit-card" data-unit="4">
+              <div class="unit-icon">📁</div>
+              <h4>Unidad IV: Monitoreo de Servidores, Optimización del Desempeño y Recuperación Basada en Flashback</h4>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ VISTA SEMANAS ============ -->
+        <section class="view" id="view-semanas">
+          <h2 class="semanas-title" id="semanas-title">
+            Semanas de la Unidad I
+          </h2>
+          <div class="semanas-underline"></div>
+
+          <div class="weeks-grid" id="weeks-grid">
+            <!-- Se llena con JS -->
+          </div>
+
+          <button class="btn-volver-abajo" id="btn-volver-abajo">
+            <span class="back-arrow">←</span>
+            <span>Volver a Unidades</span>
+          </button>
+        </section>
+
+        <!-- ============ VISTA ARCHIVOS (PDFs) ============ -->
+        <section class="view" id="view-archivos">
+          <h2 class="archivos-title" id="archivos-title">Archivos</h2>
+          <div class="archivos-underline"></div>
+
+          <div class="files-list" id="files-list">
+            <!-- Se llena con JS -->
+          </div>
+
+          <div class="archivos-footer">
+            <a href="#" class="btn-repositorio" id="btn-repositorio">
+              <span>🔗</span>
+              <span>Ir al repositorio</span>
+            </a>
+            <button class="btn-atras" id="btn-atras">
+              <span class="back-arrow">←</span>
+              <span>Atrás</span>
+            </button>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- ============ MODAL DE VISTA PREVIA PDF ============ -->
+  <div class="pdf-modal" id="pdf-modal">
+    <div class="pdf-modal__backdrop" id="pdf-modal-backdrop"></div>
+    <div class="pdf-modal__content">
+      <div class="pdf-modal__header">
+        <h3 class="pdf-modal__title" id="pdf-modal-title">Vista previa</h3>
+        <button class="pdf-modal__close" id="pdf-modal-close" aria-label="Cerrar">
+          ✕
+        </button>
+      </div>
+      <div class="pdf-modal__body">
+        <iframe
+          id="pdf-modal-iframe"
+          src=""
+          frameborder="0"
+          allow="autoplay"
+          title="Vista previa del PDF">
+        </iframe>
+      </div>
+      <div class="pdf-modal__footer">
+        <a href="#" target="_blank" class="pdf-modal__download" id="pdf-modal-download">
+          <span>⬇️</span>
+          <span>Abrir en Drive</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
